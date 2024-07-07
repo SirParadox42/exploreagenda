@@ -14,9 +14,11 @@ export default function Information(props) {
         const dataFetcher = async() => {
             try {
                 const response = await sendRequest(`https://www.googleapis.com/customsearch/v1?key=${GOOGLE_SEARCH_KEY}&cx=${CX}&q=${props.route.params.title} in ${props.route.params.location} Tripadvisor`, 'GET', null, {}, false);
-                setLink(response.items[0].link)
+                setLink(response.items[0].link);
             } catch(err) {
-                Alert.alert('Error', err.message, [{text: 'Ok'}]);
+                if (err.message) {
+                    Alert.alert('Error', err.message, [{text: 'Ok'}]);
+                }
             }
         };
 
