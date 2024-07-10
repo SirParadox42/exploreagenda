@@ -1,7 +1,5 @@
 const {GoogleGenerativeAI} = require('@google/generative-ai');
 
-const oldPrompt = `Give me a list, 15 items in length, of things to do in (city). Put the title of the place in the thing to do on the first line of the list item. Start a new line, and put a brief description of the list item on the new line. Start a new line, and put an image of the list item on the new line.`;
-
 exports.geminiRequest = async(req, res, next) => {
     const city = req.params.city;
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_KEY);
