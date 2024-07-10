@@ -19,7 +19,7 @@ export default function UpdateList(props) {
             }
 
             await sendRequest(`user/update/${props.route.params.listId}`, 'PATCH', JSON.stringify({activities: activities.activities}), {'Content-Type': 'application/json', Authorization: `Bearer ${ctx.token}`});
-            setActivities({location: '', activities: []})
+            setActivities({location: '', activities: []});
             props.navigation.navigate('My Activity Lists');
         } catch(err) {
             Alert.alert('Error', err.message, [{text: 'Ok'}]);
