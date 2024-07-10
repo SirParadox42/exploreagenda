@@ -105,6 +105,6 @@ exports.deleteList = async(req, res, next) => {
         await user.save();
         return res.status(200).json({message: 'Activity list deleted.'});
     } catch(err) {
-        return res.status(500).json({message: 'Deleting activity list failed.'})
+        return res.status(500).json({message: 'Deleting activity list failed.'});
     }
 };
