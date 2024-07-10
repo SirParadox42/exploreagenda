@@ -88,7 +88,7 @@ exports.updateList = async(req, res, next) => {
 
     try {
         const user = await User.findById(req.userId);
-        user.lists = user.lists.map(list => list.id === listId ? {...list, activities} : list);
+        user.lists = user.lists.map(list => list.id.toString() === listId.toString() ? {...list, activities} : list);
         await user.save();
         return res.status(200).json({message: 'Activity list updated.'});
     } catch(err) {
