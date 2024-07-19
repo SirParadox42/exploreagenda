@@ -7,7 +7,7 @@ import useHttp from '../hooks/useHttp';
 import Loading from '../components/Loading';
 import {context} from '../store/context';
 
-export default function Login(props) {
+export default function Signup(props) {
     const ctx = useContext(context);
     const [isLoading, sendRequest] = useHttp();
     const [userInput, userValid, handleUserChange, handleUserBlur, handleUserSubmit, userInvalid] = useInput(input => input.length > 0);
